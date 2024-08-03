@@ -1,0 +1,27 @@
+<mdui-navigation-rail placement="right" divider>
+    <app-drawer slot="top"></app-drawer>
+    <mdui-fab lowered style="background-color: rgb(var(--mdui-color-error));color: rgb(var(--mdui-color-on-error))"
+        slot="top">
+        <mdui-icon-image--outlined slot="icon"></mdui-icon-image--outlined>
+    </mdui-fab>
+    <mdui-button-icon icon="logout" slot="bottom"></mdui-button-icon>
+
+    <mdui-navigation-rail-item value="recent">
+        Recent
+        <mdui-icon-watch-later--outlined slot="icon"></mdui-icon-watch-later--outlined>
+    </mdui-navigation-rail-item>
+    <mdui-navigation-rail-item value="images">
+        Images
+        <mdui-icon-image--outlined slot="icon"></mdui-icon-image--outlined>
+    </mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="library_music" value="library">Library</mdui-navigation-rail-item>
+    <mdui-navigation-rail-item icon="library_music" (click)="openDialog()">Dialog</mdui-navigation-rail-item>
+
+</mdui-navigation-rail>
+
+<mdui-dialog headline="Delete selected images?" close-on-esc close-on-overlay-click #dialog primary="Dialog Title"
+    description="Images will be permenantly removed from you account and all synced devices.">
+
+    <mdui-button slot="action" variant="text">Cancel</mdui-button>
+    <mdui-button slot="action" variant="tonal">Delete</mdui-button>
+</mdui-dialog>
