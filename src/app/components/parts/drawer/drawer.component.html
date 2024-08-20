@@ -1,0 +1,29 @@
+<mdui-navigation-drawer #navigationDrawer placement="right" modal close-on-esc close-on-overlay-click>
+    <mdui-list style="padding-left: 16px;padding-right: 16px;">
+        <mdui-list-item rounded>Headline</mdui-list-item>
+        <mdui-list-item active rounded>Headline</mdui-list-item>
+        <mdui-collapse accordion (change)="opened = !opened" value="item=1">
+            <mdui-collapse-item value="item=1">
+                <mdui-list-item rounded slot="header" icon="menu">
+                    Item 1
+                    <mdui-icon slot="end-icon" *ngIf="!opened" name="keyboard_arrow_down"></mdui-icon>
+                    <mdui-icon slot="end-icon" *ngIf="opened" name="keyboard_arrow_up"></mdui-icon>
+
+                </mdui-list-item>
+                <div style="margin-left: 2.5rem">
+                    <mdui-list-item rounded>Item 1 - subitem</mdui-list-item>
+                </div>
+            </mdui-collapse-item>
+            <mdui-collapse-item>
+                <mdui-list-item rounded slot="header" icon="near_me">Item 2</mdui-list-item>
+                <div style="margin-left: 2.5rem">
+                    <mdui-list-item rounded>Item 2 - subitem</mdui-list-item>
+                </div>
+            </mdui-collapse-item>
+        </mdui-collapse>
+    </mdui-list>
+</mdui-navigation-drawer>
+
+<div style="height: 160px;">
+    <mdui-button-icon icon="menu" (click)="openDrawer()"></mdui-button-icon>
+</div>
